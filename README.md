@@ -83,16 +83,16 @@ PORT=3000
 DATABASE_URL=postgresql://user:password@localhost:5432/bookings
 REDIS_URL=redis://localhost:6379
 JWT_SECRET=your-super-secret-jwt-key-change-in-production
-FRONTEND_URL=http://localhost:3001 ```
-
+FRONTEND_URL=http://localhost:3001 
+```
 
 ### Installation
 
 Clone the repository:
 
 ```git clone https://github.com/your-org/bookings-microservice.git
-cd bookings-microservice```
-
+cd bookings-microservice
+```
 
 ### Install dependencies:
 
@@ -152,11 +152,13 @@ cd bookings-microservice```
     "service_id": "service-uuid",
     "start_time": "2024-01-01T10:00:00Z",
     "end_time": "2024-01-01T11:00:00Z"
-  }'```
+  }'
+```
 
 ### Get upcoming bookings
 ```curl -X GET "http://localhost:3000/bookings/upcoming?page=1&limit=10" \
-  -H "Authorization: Bearer <JWT_TOKEN>"```
+  -H "Authorization: Bearer <JWT_TOKEN>"
+```
 
 ### Health check
 ```curl -X GET http://localhost:3000/health```
@@ -176,4 +178,5 @@ socket.on('booking.created', (booking) => {
 
 socket.on('booking.reminder', (reminder) => {
   console.log('Reminder:', reminder);
-});```
+});
+```
