@@ -5,11 +5,13 @@ services:
     build: .
     ports:
       - "3000:3000"
+      - "50051:50051"  # gRPC port
     environment:
       - NODE_ENV=production
       - DATABASE_URL=postgresql://user:password@db:5432/bookings
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=your-secret-key
+      - GRPC_URL=0.0.0.0:50051
     depends_on:
       - db
       - redis
